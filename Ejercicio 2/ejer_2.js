@@ -17,9 +17,9 @@
 // //dividimos los números y escribimos su resultado
 // resultado&lt;-numero1/numero2
 // Escribir resultado
-var a = Number(prompt("Introduce el primer número"));
+var a = parseInt(prompt("Introduce el primer número"));
 console.log(a);
-var b = Number(prompt("Introduce el segundo número"));
+var b = parseInt(prompt("Introduce el segundo número"));
 console.log(b);
 var resultado = 0;
 resultado = a + b;
