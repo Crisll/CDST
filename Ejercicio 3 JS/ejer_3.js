@@ -16,7 +16,7 @@
 // //Si el primer Si es falso, escribe que el numero2 es mayor
 // Sino
 // Escribir numero2 &quot; es el mayor de los dos&quot;
-// FinSi
+// Fin Si
 // FinProceso
 
 var a = parseInt(prompt("Introduce el primer número"));
