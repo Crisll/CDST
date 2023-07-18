@@ -10,7 +10,7 @@ if (mes.toLowerCase()=="octubre") {
 //     console.log(importe*0.85)
 // }
 // else if (mes=="OCTUBRE") {
-//     console.log(importe*0.85)
+//     console.log(importe*0.85) 
 // }
 // else if (mes=="oCTUBRE") {
 //     console.log(importe*0.85)
