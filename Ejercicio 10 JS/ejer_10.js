@@ -18,6 +18,9 @@ switch (mes.toLowerCase()) {
     case "agosto":
         document.write(importe*0.85);
         break;
+    case "octubre":
+        document.write(importe*0.85);
+        break;
     case "noviembre":
         document.write(importe*0.75);
         break;
