@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+.form {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.form form {
+    display: flex;
+    flex-direction: column;
+    background-color: bisque;
+    padding: 1.5em;
+}
+.filled {
+    display: none;
+    border: 0.2em dashed black;
+    height: 100%;
+    margin-left: 1em;
+    margin-top: 0.5em;
+}
