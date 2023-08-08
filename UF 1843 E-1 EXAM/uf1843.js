@@ -93,3 +93,6 @@ function DV2() {
     document.querySelector("#accesibilidad").style.fontSize = "1em"
     document.querySelector("#accesibilidad").style.transform = "translate(0em, 32em)"
 }
+$( function() {
+    $( "#seccion3" ).accordion();
+  } );
