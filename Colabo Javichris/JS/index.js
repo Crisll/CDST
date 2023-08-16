@@ -1,3 +1,5 @@
+var usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
 $(function () {
 
     $( "#accordion" ).accordion({
@@ -11,7 +13,8 @@ $(function () {
         $("#content").empty();
         $("#content").addClass("formulario");
         $("#content").removeClass("inform");
-        var texto = '<form action= "https://reqres.in/api/users" id="formularioRegistro"><input name="username" placeholder="Nombre" id="username" type="text"><input placeholder="Correo" name = "correo" id="correo" type="email"><input placeholder="Contraseña" type="password" name="password" id="password"><input placeholder="Teléfono" name = "telefono" id="telefono" type="number"><input placeholder="Foto de Perfil" name = "fotoPerfil" id="fotoPerfil" type="url"><input type="submit" id="registrarse" value="Registrarse"></form><div id="datos"></div>';
+                                    /*https://reqres.in/api/users*/
+        var texto = '<form action= "index.html" id="formularioRegistro"><input name="username" placeholder="Nombre" id="username" type="text"><input placeholder="Correo" name = "correo" id="correo" type="email"><input placeholder="Contraseña" type="password" name="password" id="password"><input placeholder="Teléfono" name = "telefono" id="telefono" type="number"><input placeholder="Foto de Perfil" name = "fotoPerfil" id="fotoPerfil" type="url"></form><input type="submit" id="registrarse" value="Registrarse"><div id="datos"></div>';
         var content = $("#content");
         content.append(texto);
 
@@ -20,8 +23,8 @@ $(function () {
 
 
 
-	$("#formularioRegistro").submit(function(e){
-
+	//$("#formularioRegistro").submit(function(e){
+    $("#registrarse").on("click", function(){
 
         var usuario = {
             nombre: $("input[name='username']").val(),
@@ -29,15 +32,10 @@ $(function () {
             telefono: $("input[name = 'telefono']").val(),
             fotoPerfil: $("input[name = 'fotoPerfil']").val()
         }
+        console.log(usuario);
+        usuarios.append(usuario);
 
-
-        $.ajax({
-            url: $(this).attr("action"),
-            type: "POST",
-
-            data: usuario,
-
-        });
+        localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
     });
 
@@ -49,7 +47,8 @@ $(function () {
         $("#content").empty();
         $("#content").addClass("formulario");
         $("#content").removeClass("inform");
-        var texto = '<form action="https://reqres.in/api/users" id="formularioAcceso"><input name="username" placeholder="Nombre" id="username" type="text"><input placeholder="Correo" name = "correo" id="correo" type="email"><input placeholder="Contraseña" type="password" name="password" id="password"><input type="submit" id="access" value="Iniciar sesión"></form><div id="datos"></div>';
+                                   /*https://reqres.in/api/users*/
+        var texto = '<form action="#" id="formularioAcceso"><input name="username" placeholder="Nombre" id="username" type="text"><input placeholder="Correo" name = "correo" id="correo" type="email"><input placeholder="Contraseña" type="password" name="password" id="password"><input type="submit" id="access" value="Iniciar sesión"></form><div id="datos"></div>';
         var content = $("#content");
         content.append(texto);
 
@@ -59,13 +58,17 @@ $(function () {
 
 	$("#formularioAcceso").submit(function(e){
 
-        $.get("https://requres.in/api/users", { page: 2 }, function (respuesta) {
 
-            respuesta.data.array.forEach((element) => {
-                $('#datos').append("<p>" + element.first_name + " " + element.last_name + "<p>");
 
-            });
-        });
+
+
+        // $.get("https://requres.in/api/users", { page: 2 }, function (respuesta) {
+
+        //     respuesta.data.array.forEach((element) => {
+        //         $('#datos').append("<p>" + element.first_name + " " + element.last_name + "<p>");
+
+        //     });
+        // });
 
     });
 
@@ -119,6 +122,30 @@ $(function () {
     });
 
 
+
+
+
+
+
 });
 
 
+
+
+const root = document.querySelector(':root');
+function darkness(){
+
+    root.style.setProperty('--headerColor', "#002249");
+    root.style.setProperty('--asideColor', "#082f5a");
+    root.style.setProperty('--buttonHover', "#636363");
+    root.style.setProperty('--mainArea', "#000000");
+    root.style.setProperty('--fontColor', "#ffffff");
+}
+
+function light(){
+    root.style.setProperty('--headerColor',"#005296fa");
+    root.style.setProperty('--asideColor', "#3a81d1");
+    root.style.setProperty('--buttonHover', "#4c77ee");
+    root.style.setProperty('--mainArea', "#ffffff");
+    root.style.setProperty('--fontColor', "#000000");
+}
