@@ -38,8 +38,8 @@ $(function () {
 
             }
             console.log(usuario);
-            usuarios.append(usuario);
-            localStorage.setItem("usuarios", usuarios);
+           // usuarios.append(usuario);
+            localStorage.setItem("usuario", JSON.stringify(usuario));
 
         });
 
