@@ -1,4 +1,4 @@
-var usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
 
 $(function () {
 
@@ -15,20 +15,18 @@ $(function () {
         $("#content").addClass("formulario");
         $("#content").removeClass("inform");
         /*https://reqres.in/api/users*/
-        var texto = '<form action= "index.html" id="formularioRegistro"><input name="username" placeholder="Nombre" id="username" type="text"><input placeholder="Correo" name = "correo" id="correo" type="email"><input placeholder="Contraseña" type="password" name="password" id="password"><input placeholder="Teléfono" name = "telefono" id="telefono" type="number"><input placeholder="Foto de Perfil" name = "fotoPerfil" id="fotoPerfil" type="url"></form><input type="submit" id="registrarse" value="Registrarse"><div id="datos"></div>';
+        var texto = '<form action= "#" id="formularioRegistro"><input name="username" placeholder="Nombre" id="username" type="text"><input placeholder="Correo" name = "correo" id="correo" type="email"><input placeholder="Contraseña" type="password" name="password" id="password"><input placeholder="Teléfono" name = "telefono" id="telefono" type="number"><input placeholder="Foto de Perfil" name = "fotoPerfil" id="fotoPerfil" type="url"><input type="submit" id="registrarse" value="Registrarse"></form><div id="datos"></div>';
         var content = $("#content");
         content.append(texto);
 
 
-            //$("#formularioRegistro").submit(function(e){
+        $("#formularioRegistro").submit(function(e){ e.preventDefault()
 
         //$("#registrarse").on("click", function (){
-        document.querySelector("#registrarse").addEventListener("click", function (){
-
-    
-            $("#datousuario").append("hola");
+        //document.querySelector("#registrarse").addEventListener("click", function (){
 
 
+            var usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
             var usuario = {
 
                 nombre: $("input[name='username']").val(),
@@ -38,8 +36,8 @@ $(function () {
 
             }
             console.log(usuario);
-           // usuarios.append(usuario);
-            localStorage.setItem("usuario", JSON.stringify(usuario));
+            usuarios.push(usuario);
+            localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
         });
 
@@ -55,22 +53,25 @@ $(function () {
         $("#content").addClass("formulario");
         $("#content").removeClass("inform");
         /*https://reqres.in/api/users*/
-        var texto = '<form action="#" id="formularioAcceso"><input name="username" placeholder="Nombre" id="username" type="text"><input placeholder="Correo" name = "correo" id="correo" type="email"><input placeholder="Contraseña" type="password" name="password" id="password"><input type="submit" id="access" value="Iniciar sesión"></form><div id="datos"></div>';
+        var texto = '<form action="#" id="formularioAcceso"><input name="username" placeholder="Nombre o Correo electrónico" id="username" type="text"><input placeholder="Contraseña" type="password" name="password" id="password"><input type="submit" id="access" value="Iniciar sesión"></form><div id="datos"></div>';
         var content = $("#content");
         content.append(texto);
 
-
-        $("#formularioAcceso").on("click", function(){
+        $("#formularioAcceso").submit(function(e){ e.preventDefault()
+        // $("#formularioAcceso").on("click", function(){
 
             // const nombre = "elsa";
             // const correo = "capuntas@gmail.com";
             // const passw = "123456";
-    
-            $("#datousuario").append("hola");
+
+
+
             //if( ( nombre == $("#username").val() || correo == $("#correo").val() ) && passw == $("#password").val()){
-            if( ( "elsa" == $("#username").val() || "capuntas@gmail.com" == $("#correo").val() ) && "123456" == $("#password").val()){
-    
-                $("#datousuario").append("hola");
+            if( ( "elsa" == $("#username").val() || "capuntas@gmail.com" == $("#username").val() ) && "123456" == $("#password").val()){
+                
+                $("#datousuario").empty();
+                $("#datousuario").append("Nombre: Elsa <br> Email: capuntas@gmail.com");
+
     
             }
     
@@ -98,9 +99,24 @@ $(function () {
         $("#content").empty();
         $("#content").addClass("formulario");
         $("#content").removeClass("inform");
-        var texto = '<form action="formularioContacto"><input placeholder="Nombre" id="username" type="text"><input placeholder="Correo" id="correo" type="email"><textarea name="message" id="message" cols="30" rows="10" placeholder ="Escribe aquí tu mensaje..."></textarea><input type="submit" id="access" value="Enviar"></form>';
+        var texto = '<form action="#" id="formularioContacto"><input placeholder="Nombre" id="username" type="text"><input placeholder="Correo" id="correo" type="email"><textarea name="message" id="message" cols="30" rows="10" placeholder ="Escribe aquí tu mensaje..."></textarea><input type="submit" id="access" value="Enviar"></form>';
         var content = $("#content");
         content.append(texto);
+
+        var mensajes = JSON.parse(localStorage.getItem("mensajes")) || [];
+        $("#formularioContacto").submit(function(e){ e.preventDefault()
+            
+            var mensaje = {
+
+                nombre: $("#username").val(),
+                correo: $("#correo").val(),
+                texto: $("#message").val()
+
+            }
+            mensajes.push(mensaje);
+            localStorage.setItem("mensajes", JSON.stringify(mensajes));
+
+        });
 
     });
 
@@ -154,3 +170,4 @@ function light() {
     document.querySelector("#logo").src = "media/logo.png";
 
 }
+
