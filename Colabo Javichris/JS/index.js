@@ -2,81 +2,98 @@ var usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
 $(function () {
 
-    $( "#accordion" ).accordion({
+    $("#accordion").accordion({
+
         heightStyle: "content"
-      });
+
+    });
 
     $("#registro").on("click", function () {
 
         // $("#content").empty();
-
         $("#content").empty();
         $("#content").addClass("formulario");
         $("#content").removeClass("inform");
-                                    /*https://reqres.in/api/users*/
+        /*https://reqres.in/api/users*/
         var texto = '<form action= "index.html" id="formularioRegistro"><input name="username" placeholder="Nombre" id="username" type="text"><input placeholder="Correo" name = "correo" id="correo" type="email"><input placeholder="Contraseña" type="password" name="password" id="password"><input placeholder="Teléfono" name = "telefono" id="telefono" type="number"><input placeholder="Foto de Perfil" name = "fotoPerfil" id="fotoPerfil" type="url"></form><input type="submit" id="registrarse" value="Registrarse"><div id="datos"></div>';
         var content = $("#content");
         content.append(texto);
 
+
+            //$("#formularioRegistro").submit(function(e){
+
+        //$("#registrarse").on("click", function (){
+        document.querySelector("#registrarse").addEventListener("click", function (){
+
+    
+            $("#datousuario").append("hola");
+
+
+            var usuario = {
+
+                nombre: $("input[name='username']").val(),
+                correo: $("input[name = 'correo']").val(),
+                telefono: $("input[name = 'telefono']").val(),
+                fotoPerfil: $("input[name = 'fotoPerfil']").val()
+
+            }
+            console.log(usuario);
+            usuarios.append(usuario);
+            localStorage.setItem("usuarios", usuarios);
+
+        });
+
     });
 
 
-
-
-	//$("#formularioRegistro").submit(function(e){
-    $("#registrarse").on("click", function(){
-
-        var usuario = {
-            nombre: $("input[name='username']").val(),
-            correo: $("input[name = 'correo']").val(),
-            telefono: $("input[name = 'telefono']").val(),
-            fotoPerfil: $("input[name = 'fotoPerfil']").val()
-        }
-        console.log(usuario);
-        usuarios.append(usuario);
-
-        localStorage.setItem("usuarios", JSON.stringify(usuarios));
-
-    });
 
 
 
     $("#acceso").on("click", function () {
 
-
         $("#content").empty();
         $("#content").addClass("formulario");
         $("#content").removeClass("inform");
-                                   /*https://reqres.in/api/users*/
+        /*https://reqres.in/api/users*/
         var texto = '<form action="#" id="formularioAcceso"><input name="username" placeholder="Nombre" id="username" type="text"><input placeholder="Correo" name = "correo" id="correo" type="email"><input placeholder="Contraseña" type="password" name="password" id="password"><input type="submit" id="access" value="Iniciar sesión"></form><div id="datos"></div>';
         var content = $("#content");
         content.append(texto);
 
+
+        $("#formularioAcceso").on("click", function(){
+
+            // const nombre = "elsa";
+            // const correo = "capuntas@gmail.com";
+            // const passw = "123456";
+    
+            $("#datousuario").append("hola");
+            //if( ( nombre == $("#username").val() || correo == $("#correo").val() ) && passw == $("#password").val()){
+            if( ( "elsa" == $("#username").val() || "capuntas@gmail.com" == $("#correo").val() ) && "123456" == $("#password").val()){
+    
+                $("#datousuario").append("hola");
+    
+            }
+    
+    
+    
+            // $.get("https://requres.in/api/users", { page: 2 }, function (respuesta) {
+    
+            //     respuesta.data.array.forEach((element) => {
+            //         $('#datos').append("<p>" + element.first_name + " " + element.last_name + "<p>");
+    
+            //     });
+            // });
+    
+    
+    
+        });
     });
 
-
-
-	$("#formularioAcceso").submit(function(e){
-
-
-
-
-
-        // $.get("https://requres.in/api/users", { page: 2 }, function (respuesta) {
-
-        //     respuesta.data.array.forEach((element) => {
-        //         $('#datos').append("<p>" + element.first_name + " " + element.last_name + "<p>");
-
-        //     });
-        // });
-
-    });
 
 
 
 
     $("#contacto").on("click", function () {
-
 
         $("#content").empty();
         $("#content").addClass("formulario");
@@ -85,13 +102,10 @@ $(function () {
         var content = $("#content");
         content.append(texto);
 
-
-
-
     });
 
-    $("#cursos").on("click", function () {
 
+    $("#cursos").on("click", function () {
 
         $("#content").empty();
         $("#content").addClass("inform");
@@ -100,14 +114,10 @@ $(function () {
         var content = $("#content");
         content.append(texto);
 
-
-
-
     });
 
 
     $("#informacion").on("click", function () {
-
 
         $("#content").empty();
         $("#content").addClass("inform");
@@ -116,36 +126,31 @@ $(function () {
         var content = $("#content");
         content.append(texto);
 
-
-
-
     });
-
-
-
-
-
-
-
 });
 
 
 
 
 const root = document.querySelector(':root');
-function darkness(){
+function darkness() {
 
     root.style.setProperty('--headerColor', "#002249");
     root.style.setProperty('--asideColor', "#082f5a");
     root.style.setProperty('--buttonHover', "#636363");
     root.style.setProperty('--mainArea', "#000000");
     root.style.setProperty('--fontColor', "#ffffff");
+    document.querySelector("#logo").src = "media/logod.png";
+
 }
 
-function light(){
-    root.style.setProperty('--headerColor',"#005296fa");
+function light() {
+
+    root.style.setProperty('--headerColor', "#005296fa");
     root.style.setProperty('--asideColor', "#3a81d1");
     root.style.setProperty('--buttonHover', "#4c77ee");
     root.style.setProperty('--mainArea', "#ffffff");
     root.style.setProperty('--fontColor', "#000000");
+    document.querySelector("#logo").src = "media/logo.png";
+
 }
