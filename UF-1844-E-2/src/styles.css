@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+a {
+    text-decoration: none;
+}
+a:link {
+    color: white;
+}
+a:visited {
+    color: white;
+}
+button a:hover {
+    color: white
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.4em;
+    background-color: #090909;
+}
+footer p {
+    font-size: 1.2em;
+    color: #FFFFFF
+}
+footer nav li{
+    display: inline;
+    padding: 0em 1em;
+}
+footer li {
+    list-style: none;
+}
+footer li a{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 1.2em;
+}
+footer a:hover {
+    color: grey;
+}
+footer nav li:last-child {
+    padding-right: 2em;
+}
