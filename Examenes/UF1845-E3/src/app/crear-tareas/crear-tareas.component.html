@@ -1,0 +1,18 @@
+<section>
+    <div class="preform">
+        <h2>¡Indique la tarea del alumno!</h2>
+        <p>Se le asignará un ID de usuario automáticamente. Indiquenos el nombre, el código de la tarea realizada, si
+            quiere, una descripción. Indique la puntuación obtenida. Indique si ha aprobado o suspendido el usuario.</p>
+        <p>Luego se mostrará en una tarjeta con una imagen genérica los datos introducidos.</p>
+    </div>
+        <div class="formulario">
+            <form action="#" ngSubmit="agregarTarea()" name="tareaForm">
+                <input placeholder="Nombre" type="text" id="name">
+                <input placeholder="Puntuación" type="number" id="score">
+                <input placeholder="Código tarea" type="text" id="idtask">
+                <textarea name="message" cols="30" rows="5" placeholder="Coloque aquí la descripción..." id="desctask"></textarea>
+                <input placeholder="Aprobado o suspendido" type="number" id="State">
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+</section>
