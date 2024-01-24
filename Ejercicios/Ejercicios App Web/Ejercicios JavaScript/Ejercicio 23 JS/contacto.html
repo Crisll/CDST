@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UF1842 Final</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <img src="imagenes/logo.png" alt="logo" class="logo">
+            <nav>
+                <ul>
+                    <li><button onclick="inicio()">Inicio</button></li>
+                    <li><button onclick="curso()">Curso</button></li>
+                    <li><button onclick="contacto()">Contacto</button></li>
+                </ul>
+            </nav>
+    </header>
+    
+    <section class="mainframe">
+        <aside>
+            <div class="topizq">
+                <h3>Acceder a la plataforma</h3>
+                <button class="ccolor1" onclick="cliqui()">Profesor</button>
+                <p id="mostrar1"></p>
+                <button class="ccolor2" onclick="cliqui2()">Alumno</button>
+                <p id="mostrar2"></p>
+            </div>
+            <hr>
+            <div class="bottomizq">
+                <img src="imagenes/imagen-curso.jpg" alt="Curso principal" id="imagencursoprincipal">
+                <h4>Curso Online de [Curso Chulo]</h4>
+                <p>Disfruta de nuestro [Curso Chulo] que se avecina en las fechas que viene. <br> ¡Los resultados serán fructíferos!</p>
+                <button onclick="curso()">Información del curso</button>
+            </div>
+        </aside>
+        <div class="main">
+            <h2>Contacta con nosotros</h2>
+            <form action="">
+                <input type="text" placeholder="Nombre" id="nombre">
+                <input type="email" placeholder="Correo electrónico" id="email">
+                <input type="text" placeholder="Asunto" id="asunto">
+                <textarea name="" id="mensaje" cols="30" rows="10" placeholder="Escribe aquí tu mensaje..."></textarea>
+                <button onclick="recoger()">Enviar</button>
+
+            </form>
+                <hr>
+                <p id="p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum illo soluta consequuntur, molestiae odit temporibus doloribus! Delectus assumenda atque nulla vero eligendi, quos, esse, optio quisquam magnam officia sit velit.Tempora aliquid est distinctio autem eligendi. Molestiae nostrum nobis vel obcaecati deserunt quod vero minus quo officiis omnis, reprehenderit fugit libero enim porro modi tenetur accusantium praesentium dolorum consectetur. Excepturi!</p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy Ni un solo derecho reservado - Página hecha por: Christopher Da Silva Tan</p>
+        <nav>
+            <li><a href="#">Política de privacidad</a></li>
+            <li><a href="#">Política de cookies</a></li>
+            <li><a href="#">Términos de uso</a></li>
+        </nav>
+    </footer>
+    <script src="uf1842.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+.form {
+    display: flex;
+    justify-content: center;
+}
+.form form {
+    display: flex;
+    flex-direction: column;
+}
+input {
+    text-align: center;
+    border-radius: 0.5em;
+}
+select {
+    text-align: center;
+}
+.theme {
+    text-align: center;
+}
