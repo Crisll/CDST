@@ -1,0 +1,34 @@
+<section>
+    <div class="preform">
+        <h2>Calculadora de ejecuciones</h2>
+        <p>Puedes calcular cuánto podría costar de forma aproximada según el sexo, edad y oficio. El precio no es definitivo y se definirá al solicitar la <b><a routerLink="/Ejecucion">ejecución</a></b> a través del correo electrónico.<br>El <b><a routerLink="/Metodo">método</a></b> no viene incluido en el cálculo, deberás comprarlo e incluirlo en la solicitud.</p>
+    </div>
+    <div class="formulario">
+        <form action="">
+            <div class="select">
+            <select name="sexo" id="sexo" #elinput>
+                <option value="hombre">Hombre</option>
+                <option value="mujer">Mujer</option>
+                <option value="No existe">Otr@/e</option>
+            </select>
+            <select name="edad" id="edad" #elinput2>
+                <option value="infante">1 ~ 13</option>
+                <option value="adolescente">14 ~ 21</option>
+                <option value="adulto">22 ~ 59</option>
+                <option value="anciano">60 ~ +99</option>
+            </select>
+            <select name="oficio" id="oficio" #elinput3>
+                <option value="estudiante">Estudiante</option>
+                <option value="profesor">Profesor</option>
+                <option value="immune">Funcionario</option>
+                <option value="otro">Otro</option>
+            </select>
+            </div>   
+            <input type="submit" value="Calcular" (click)="conseguirInput(elinput.value)" (click)="conseguirInput(elinput2.value)" (click)="conseguirInput(elinput3.value)">
+        </form>
+        <p>El precio es de apróximadamente 2750€.</p>
+    </div>
+    <div class="preform">
+    <img src="./assets/media/prosecution.gif" alt="Presupuesto" id="prosecutor">
+    </div>  
+</section>

@@ -1,0 +1,56 @@
+.preform {
+    text-align: center;
+}
+.preform p {
+    font-size: 1.2em;
+}
+.mediaexe {
+    display:flex;
+    justify-content: center;
+    background-color: black;
+    padding: 0.25em 0em;
+}
+#deputy {
+    height: 20em;
+}
+p a:link {
+    color: black
+}
+p a:visited {
+    color: black;
+}
+p a:hover {
+    color: red;
+}
+.preform {
+    padding: 1em 0em;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 0.75em 0em;
+}
+.formulario form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.formulario input {
+    width: 30%;
+    padding: 1.25em;
+}
+
+textarea {
+    width: 30%;
+}
+textarea::placeholder {
+    display: flex;
+    align-items: flex;
+    text-align: center;
+}
+input::placeholder {
+    text-align: center;
+}
