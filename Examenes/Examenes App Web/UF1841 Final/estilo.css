@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    clear: both;
+}
+.logo {
+    height: 8em;
+}
+/* Enlaces general */
+a:visited {
+    color: #FFFFFF;
+}
+a:link {
+    color: #FFFFFF;
+}
+a:hover {
+    color: #090909;
+}
+/* Cabecera */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #114358;
+}
+header nav li{
+    display: inline;
+    padding: 1em;
+}
+header li {
+    list-style: none;
+}
+header li a{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 1.8em;
+}
+header a:hover {
+    color: #F2AA1F;
+}
+header nav li:nth-child(5) {
+    border-left: 2px solid #F1ECE7;
+}
+header nav li:last-child {
+    padding-right: 2em;
+}
+/* Section Bienvenida */
+.bienvenida {
+    background-image: url(imagenes/fondoexpresspanda.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -115px;
+    height: 25em;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 0em 22em;
+}
+.bienvenida div {
+    background-color: #ffffff6b;
+}
+.bienvenida h1, .bienvenida p {
+    color: #090909;
+    font-size: 2.2em;
+}
+/* Section Platos */
+.comida {
+    text-align: center;
+    background-color: #F1ECE7;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+#comida {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+.platos {
+    display: flex;
+    justify-content: space-evenly;  
+    height: 10.6em;
+}
+.plato {
+    display: flex;
+    border-radius: 5%;
+    flex-direction: column;
+    justify-content: end;
+}
+.plato:hover {
+    border: 2px solid #F2AA1F;
+}
+#bol {
+    background-image: url(imagenes/bol.png);
+    background-position-y: -1.25em;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#plato {
+    background-image: url(imagenes/plato.png);
+    background-position-y: -1.25em;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#carta {
+    background-image: url(imagenes/carta.png);
+    background-position-x: -0.25em;
+    background-position-y: -1em;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* Section Video */
+.video {
+    position: relative;
+}
+.vid {
+    /* position: absolute; */
+    opacity: 95%;
+}
+.vidtext {
+    position: absolute;
+    text-align: center;
+    font-size: 1.4em;
+    right: 450px;
+    bottom: 225px;
+    background-color: #ffffff6b;
+}
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #090909;
+}
+footer img {
+    width: 8%;
+}
+footer p {
+    font-size: 1.2em;
+    color: #FFFFFF
+}
+footer nav li{
+    display: inline;
+    padding: 1em;
+}
+footer li {
+    list-style: none;
+}
+footer li a{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 1.2em;
+}
+footer a:hover {
+    color: #F1ECE7;
+}
+footer nav li:last-child {
+    padding-right: 2em;
+}
+
+/* CONTACTO */
+.contacto {
+    background-image: url(imagenes/contacto.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 46em;
+    padding: 5em 40em 0em 40em;
+    text-align: center;
+}
+.formcontacto, .formregistro, .formlogin {
+    background-color: #f1ece734;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contacto h1 {
+    font-size: 3em;
+}
+.contacto p {
+    font-size: 1.5em;
+}
+/* REGISTRO */
+.registro {
+    background-image: url(imagenes/registro.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 46em;
+    padding: 5em 40em 0em 40em;
+    text-align: center;
+}
+/* LOGIN */
+.login {
+    background-image: url(imagenes/login.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 46em;
+    padding: 5em 40em 0em 40em;
+    text-align: center;
+}
